@@ -21,7 +21,7 @@ const AmountCost = () => {
         );
     } else {
         content = (
-            <div className="p-10 md:pt-10 mx-5">
+            <div className="p-10 md:mx-5 mx-3">
                 <h1 className="md:text-2xl text-xl font-semibold mb-4">Paint amounts and cost per room: </h1>
                 <div className="flex md:flex-row md:space-x-6 md:justify-start flex-col justify-center">
                     {spaceInfo.map((space, index) => {
