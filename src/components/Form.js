@@ -22,7 +22,7 @@ const Form = () => {
     };
 
     return (
-        <div className="bg-red-200 rounded-md overflow-hidden shadow-lg p-5 mb-4 mx-32">
+        <div className="bg-red-200 rounded-md overflow-hidden shadow-lg p-5 mx-8 mb-4">
             <h1 className="text-gray-700 text-2xl font-bold mb-3">Paint Information</h1>
             <form className="text-gray-700" onSubmit={handleSubmit}>
                 <div className="form-group mb-3">
