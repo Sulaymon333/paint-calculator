@@ -1,0 +1,17 @@
+[
+    {
+        "name": "First floor lobby",
+        "area": 250,
+        "surfaceRoughness": "1.3"
+    },
+    {
+        "name": "Second floor apartment",
+        "area": 120,
+        "surfaceRoughness": "1.9"
+    },
+    {
+        "name": "Third floor office",
+        "area": 57,
+        "surfaceRoughness": "1.55"
+    }
+]
