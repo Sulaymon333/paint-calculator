@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
+import { FormContext } from '../store/contextProvider';
 
 const Form = () => {
-    const [submitted, setSubmitted] = useState(false);
+    const formCtx = useContext(FormContext);
     const [formData, setFormData] = useState({
         paintName: '',
         pricePerLitre: '',
@@ -14,12 +15,12 @@ const Form = () => {
             ...formData,
             [e.target.name]: e.target.value,
         });
-        console.log(formData);
     };
     const handleSubmit = (e) => {
-        setSubmitted(true);
         e.preventDefault();
+        formCtx.updateFormData({ ...formData });
     };
+
     return (
         <div className="bg-red-200 rounded-md overflow-hidden shadow-lg p-5 mb-4 mx-32">
             <h1 className="text-gray-700 text-2xl font-bold mb-3">Paint Information</h1>
@@ -56,7 +57,7 @@ const Form = () => {
                 </div>
                 <div className="form-group mb-3">
                     <label className="block mb-1" htmlFor="square-per-litre">
-                        Number of square meters/litre of paint:
+                        Number of square meter/litre of paint:
                     </label>
                     <input
                         required
