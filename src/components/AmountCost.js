@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { FormContext } from '../store/contextProvider';
+import { currencyFormatter } from '../utils';
 import Card from './Card';
 import SpanModifier from './SpanModifier';
-import { currencyFormatter } from '../utils';
 import spaceInfo from '../spaceInfo.json';
 
 const AmountCost = () => {
@@ -23,11 +23,9 @@ const AmountCost = () => {
                 <h1 className="md:text-2xl text-xl font-semibold mb-4">Paint amounts and cost per room: </h1>
                 <div className="flex md:flex-row md:space-x-6 md:justify-start flex-col justify-center">
                     {spaceInfo.map((space, index) => {
-                        console.log(currencyFormatter(223333.78899887));
                         const { name, area, surfaceRoughness } = space;
                         let litres = (area * surfaceRoughness * levels) / sqmPerLitre;
                         let totalPrice = litres * pricePerLitre;
-                        console.log(litres, totalPrice);
                         return (
                             <Card
                                 key={index}
@@ -35,59 +33,19 @@ const AmountCost = () => {
                                 title={`${name} painted with ${paintName}`}
                                 item1={
                                     <>
-                                        - Amount of paint required: <SpanModifier value={`${litres.toFixed(2)}`} />
+                                        <span className="text-2xl text-indigo-500">&#8226;</span> Amount of paint
+                                        required: <SpanModifier value={`${litres.toFixed(2)}`} />
                                     </>
                                 }
                                 item2={
                                     <>
-                                        - Total cost: <SpanModifier value={`${totalPrice}`} />
+                                        <span className="text-2xl text-indigo-500">&#8226;</span> Total cost:{' '}
+                                        <SpanModifier value={`${currencyFormatter(totalPrice)}`} />
                                     </>
                                 }
                             ></Card>
                         );
                     })}
-                    {/* <Card
-                        backgroundColor="bg-blue-100"
-                        title={`First floor lobby painted with ${paintName}`}
-                        item1={
-                            <>
-                                - Amount of paint required: <SpanModifier value="1000.00 litres" />{' '}
-                            </>
-                        }
-                        item2={
-                            <>
-                                - Total cost: <SpanModifier value="1000.00 €" />
-                            </>
-                        }
-                    ></Card>
-                    <Card
-                        backgroundColor="bg-blue-100"
-                        title="Second floor lobby painted with Tikkurila ykkönen"
-                        item1={
-                            <>
-                                - Amount of paint required: <SpanModifier value="1000.00 litres" />{' '}
-                            </>
-                        }
-                        item2={
-                            <>
-                                - Total cost: <SpanModifier value="1000.00 €" />
-                            </>
-                        }
-                    ></Card>
-                    <Card
-                        backgroundColor="bg-blue-100"
-                        title="Third floor lobby painted with Tikkurila ykkönen"
-                        item1={
-                            <>
-                                - Amount of paint required: <SpanModifier value="1000.00 litres" />{' '}
-                            </>
-                        }
-                        item2={
-                            <>
-                                - Total cost: <SpanModifier value="1000.00 €" />
-                            </>
-                        }
-                    ></Card> */}
                 </div>
             </div>
         );

@@ -1,7 +1,20 @@
-import React from 'react';
+import { useContext } from 'react';
+import { FormContext } from '../store/contextProvider';
+import { currencyFormatter } from '../utils';
 import SpanModifier from './SpanModifier';
+import spaceInfo from '../spaceInfo.json';
 
 const CostSummary = () => {
+    const formCtx = useContext(FormContext);
+    const { paintName, pricePerLitre, sqmPerLitre, levels } = formCtx;
+
+    const totalSummary = spaceInfo.reduce((total, accum) => {
+        console.log(total);
+        {
+            return { totalCost: accum.surfaceRoughness, totalArea: total.totalArea + accum.area };
+        }
+    }, {});
+    console.log(totalSummary);
     return (
         <div className="rounded-md overflow-hidden shadow-lg p-5 mb-4 bg-indigo-200 mx-32">
             <h2 className="text-xl font-semibold mb-3">Overall Cost Summary</h2>

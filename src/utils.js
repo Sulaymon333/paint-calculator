@@ -1,4 +1,4 @@
-const currencyFormatter = (locale = 'fi-FI', value, currency = 'EUR') => {
+const currencyFormatter = (value, currency = 'EUR', locale = 'fi-FI') => {
     const formattedValue = new Intl.NumberFormat(locale, { currency: currency, style: 'currency' }).format(
         value.toFixed(2)
     );

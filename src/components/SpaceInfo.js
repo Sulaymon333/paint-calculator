@@ -15,12 +15,14 @@ const FloorInfo = () => {
                         title={item.name}
                         item1={
                             <>
-                                - Space area: <SpanModifier value={item.area} /> m²
+                                <span className="text-2xl text-red-500">&#8226;</span> Space area:{' '}
+                                <SpanModifier value={item.area} /> m²
                             </>
                         }
                         item2={
                             <>
-                                - Surface roughness: <SpanModifier value={item.surfaceRoughness} />
+                                <span className="text-2xl text-red-500">&#8226;</span> Surface roughness:{' '}
+                                <SpanModifier value={item.surfaceRoughness} />
                             </>
                         }
                     ></Card>
