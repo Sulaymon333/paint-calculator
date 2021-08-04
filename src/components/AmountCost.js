@@ -35,7 +35,7 @@ const AmountCost = () => {
                                 title={
                                     <>
                                         {name} painted with{' '}
-                                        <span className="bg-blue-700 p-1 px-2 rounded-3xl text-sm text-white whitespace-nowrap">
+                                        <span className="bg-blue-600 p-1 px-2 rounded-3xl text-sm text-white whitespace-nowrap">
                                             {paintName}
                                         </span>
                                     </>

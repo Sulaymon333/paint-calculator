@@ -37,12 +37,16 @@ const CostSummary = () => {
                 <SpanModifier value={`${totalSummary.totalSurfaceArea.toFixed(2)} m²`} />
             </p>
             <p className="text-md font-medium">
-                <span className="text-2xl text-green-500">&#8226;</span> Total litres needed:{' '}
-                <SpanModifier value={`${totalLitre}`} />
+                <span className="text-2xl text-green-500">&#8226;</span> Total quantity needed:{' '}
+                <span className="bg-red-500 p-1 px-2 rounded-3xl text-sm text-white whitespace-nowrap">
+                    <SpanModifier value={`${totalLitre}`} />
+                </span>
             </p>
             <p className="text-md font-medium">
                 <span className="text-2xl text-purple-500">&#8226;</span> Total cost for the building:{' '}
-                <SpanModifier value={totalCost} />
+                <span className="bg-green-500 p-1 px-2 rounded-3xl text-sm text-white whitespace-nowrap">
+                    <SpanModifier value={totalCost} />
+                </span>
             </p>
         </div>
     );
