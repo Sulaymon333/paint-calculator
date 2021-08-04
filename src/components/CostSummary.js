@@ -15,9 +15,7 @@ const CostSummary = () => {
         totalArea += accum.area;
         totalSurfaceArea += accum.area * accum.surfaceRoughness;
 
-        {
-            return { totalSurfaceArea: totalSurfaceArea, totalArea: totalArea };
-        }
+        return { totalSurfaceArea: totalSurfaceArea, totalArea: totalArea };
     }, {});
     console.log(totalSummary);
     const totalLitreValue = ((totalSummary.totalSurfaceArea * levels) / sqmPerLitre).toFixed(2);
