@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Card = ({ backgroundColor, title, item1, item2 }) => {
     return (
         <div

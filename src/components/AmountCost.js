@@ -43,7 +43,7 @@ const AmountCost = () => {
                                 item1={
                                     <>
                                         <span className="text-2xl text-indigo-500">&#8226;</span> Amount of paint
-                                        required: <SpanModifier value={`${litres.toFixed(2)}`} />
+                                        required: <SpanModifier value={`${litres.toFixed(2)} litres`} />
                                     </>
                                 }
                                 item2={

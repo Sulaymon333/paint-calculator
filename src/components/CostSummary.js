@@ -21,7 +21,7 @@ const CostSummary = () => {
     }, {});
     console.log(totalSummary);
     const totalLitreValue = ((totalSummary.totalSurfaceArea * levels) / sqmPerLitre).toFixed(2);
-    totalLitre = levels === undefined ? 'No data yet!' : `${totalLitreValue} m²`;
+    totalLitre = levels === undefined ? 'No data yet!' : `${totalLitreValue} litres`;
 
     totalCost =
         levels === undefined
