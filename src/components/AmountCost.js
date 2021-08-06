@@ -12,7 +12,7 @@ const AmountCost = () => {
 
     if (Object.keys(formCtx.formContext).length === 0) {
         content = (
-            <div className="p-5 md:pt-10 mx-5">
+            <div className="p-5 md:pt-10 mx-3">
                 <div className="bg-red-500 rounded-md overflow-hidden shadow-lg p-5 mx-5 my-10 text-white md:h-32">
                     <h2 className="text-2xl font-semibold mb-3">No Calculation yet!</h2>
                     <p>Please fill the form to get results</p>
